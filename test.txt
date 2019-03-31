@@ -1,1 +1,0 @@
-When we first mentioned lambda expressions, we said that they let you generate an instance of a functional interface. Nonetheless, a lambda expression itself doesn’t contain the information about which functional interface it’s implementing. In order to have a more formal understanding of lambda expressions, you should know what the actual type of a lambda is.
