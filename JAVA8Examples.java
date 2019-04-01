@@ -38,4 +38,15 @@ public class Java8CodeExamples {
                 //.collect(Collectors.toMap(w -> w, w -> w.length())) -> this is also correct
                 .collect(Collectors.toMap(String::toString, String::length));
     }
+    
+    /**
+     * Sort string based on length
+     */
+    public static List<String> sortStringByLength(List<String> list) {
+        Optional.ofNullable(list)
+                .orElse(Collections.emptyList())
+                .sort(Comparator.comparing(String::length));
+
+        return list;
+    }
 }
