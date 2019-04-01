@@ -1,0 +1,5 @@
+# java8
+## Primitive specializations 
+Java type is either a reference type (for example, Byte, Integer, Object, List) or a primitive type (for example, int, double, byte, char). But generic parameters (for example, the T in Consumer<T>) can be bound only to reference types. As a result, in Java there’s a mechanism to convert a primitive type into a corresponding reference type. This mechanism is called boxing. The opposite approach (that is, converting a reference type into a corresponding primitive type) is called unboxing. Java also has an autoboxing mechanism to facilitate the task for programmers: boxing and unboxing operations are done automatically.
+But this comes with a performance cost. Boxed values are essentially a wrapper around primitive types and are stored on the heap(dynamic memory allocation). Therefore, boxed values use more memory and require additional memory lookups to fetch the wrapped primitive value.
+Java 8 brings a specialized version of the functional interfaces we described earlier in order to avoid autoboxing operations when the inputs or outputs are primitives.
