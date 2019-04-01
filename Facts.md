@@ -9,3 +9,9 @@ You may be asking yourself why local variables have these restrictions. First, t
 
 ## Intermediate operations in Stream pipeline
 Intermediate operations such as filter or sorted return another stream as the return type. This allows the operations to be connected to form a query. What’s important is that intermediate operations don’t perform any processing until a terminal operation is invoked on the stream pipeline—they’re ``lazy``. This is because intermediate operations can usually be merged and processed into a single pass by the terminal operation.
+
+## Working with streams
+Working with streams in general involves three items:
+1. A data source (such as a collection) to perform a query on
+2. A chain of intermediate operations that form a stream pipeline
+3. A terminal operation that executes the stream pipeline and produces a result
