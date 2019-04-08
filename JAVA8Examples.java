@@ -115,4 +115,26 @@ public class Java8CodeExamples {
                 .distinct()
                 .collect(Collectors.toList());
     }
+    
+    /**
+     * find any even element
+     */
+    public static Optional<Integer> findAnyEven(List<Integer> list) {
+        return Optional.ofNullable(list)
+                .orElse(Collections.emptyList())
+                .stream()
+                .filter(i -> i%2 == 0)
+                .findAny();
+    }
+
+    /**
+     * find first even element
+     */
+    public static Optional<Integer> findFirstEven(List<Integer> list) {
+        return Optional.ofNullable(list)
+                .orElse(Collections.emptyList())
+                .stream()
+                .filter(i -> i%2 == 0)
+                .findFirst();
+    }
 }
