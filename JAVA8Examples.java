@@ -12,6 +12,18 @@ public class Java8CodeExamples {
                 ).collect(Collectors.toList());
     }
     
+     /**
+     * Check if all even in list
+     */
+
+    public static boolean allEven(List<Integer> intList) {
+        return Optional.ofNullable(intList)
+                .orElse(Collections.emptyList())
+                .stream()
+                .mapToInt(Integer::intValue)
+                .allMatch(i -> i %2 == 0);
+    }
+    
     /**
      * Depicts Comparator.naturalOrder
      * Works for null and empty string.
