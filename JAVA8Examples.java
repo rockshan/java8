@@ -1,4 +1,29 @@
 public class Java8CodeExamples {
+    ///////////////////REDUCE EXAMPLES////////////////////////
+    
+     /**
+     * sum of all the elements
+     */
+    public static int findSum(List<Integer> integerList) {
+        return Optional.ofNullable(integerList)
+                .orElse(Collections.emptyList())
+                .stream()
+                .reduce(0, (a, b) -> a +b);
+    }
+
+
+    /**
+     * sum of all the elements without initial value
+     */
+    public static Optional<Integer> findSumWithoutInitialValue(List<Integer> integerList) {
+        return Optional.ofNullable(integerList)
+                .orElse(Collections.emptyList())
+                .stream()
+                .reduce((a, b) -> a +b);
+    }
+    ///////////////////REDUCE EXAMPLES////////////////////////
+    
+    
     
     /**
      * Generate pair from two list
