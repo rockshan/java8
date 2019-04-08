@@ -49,4 +49,18 @@ public class Java8CodeExamples {
 
         return list;
     }
+    
+    
+    /**
+     * Filtering unique elements
+     * This works on Generic, null and empty list
+     */
+
+    public static <T> List<T> getUniqueItems(List<T> list) {
+        return Optional.ofNullable(list)
+                .orElse(Collections.emptyList())
+                .stream()
+                .distinct()
+                .collect(Collectors.toList());
+    }
 }
