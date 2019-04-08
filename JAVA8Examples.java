@@ -12,6 +12,19 @@ public class Java8CodeExamples {
                 ).collect(Collectors.toList());
     }
     
+    
+    /**
+     * Check if at least one even
+     */
+
+    public static boolean atLeastOneEven(List<Integer> intList) {
+        return Optional.ofNullable(intList)
+                .orElse(Collections.emptyList())
+                .stream()
+                .mapToInt(Integer::intValue)
+                .anyMatch(i -> i %2 == 0);
+    }
+    
      /**
      * Check if all even in list
      */
