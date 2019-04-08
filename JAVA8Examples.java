@@ -11,6 +11,18 @@ public class Java8CodeExamples {
                 .reduce(0, (a, b) -> a +b);
     }
 
+    
+    
+    /**
+     * Max of all the elements
+     */
+    public static Optional<Integer> findMax(List<Integer> integerList) {
+        return Optional.ofNullable(integerList)
+                .orElse(Collections.emptyList())
+                .stream()
+                .reduce((a,b) -> a > b ? a:b);
+                //.reduce(Integer::max); => this is also correct
+    }
 
     /**
      * sum of all the elements without initial value
