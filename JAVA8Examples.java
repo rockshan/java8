@@ -1,4 +1,17 @@
 public class Java8CodeExamples {
+    
+    /**
+     * Generate pair from two list
+     */
+    public static List<int []> generatePair(List<Integer> l1, List<Integer> l2) {
+
+        return l1.stream()
+                .flatMap(
+                        i -> l2.stream()
+                                .map(j -> new int[]{i,j})
+                ).collect(Collectors.toList());
+    }
+    
     /**
      * Depicts Comparator.naturalOrder
      * Works for null and empty string.
