@@ -10,6 +10,20 @@ public class Java8CodeExamples {
                 .stream()
                 .max(Comparator.naturalOrder());
     }
+    
+     /**
+     * Get character string for each word
+     * Works on Null and empty list
+     */
+
+    public static List<String> getCharAsStringList(List<String> words) {
+         return Optional.ofNullable(words)
+                .orElse(Collections.emptyList())
+                .stream()
+                .map(w -> w.split(""))
+                .flatMap(arr -> Arrays.stream(arr))
+                .collect(Collectors.toList());
+    }
 
     /**
      * More optimized version for integer, Less unboxing
