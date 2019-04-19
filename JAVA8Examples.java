@@ -38,6 +38,27 @@ public class Java8CodeExamples {
     
     
     /**
+     * Find sum using int stream
+     */
+
+    public static int findSumUsingIntStream(List<Integer> list) {
+        return Optional.ofNullable(list)
+                .orElse(Collections.emptyList())
+                .stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+    }
+
+    /**
+     * Generate the list of all given integer between two numbers(inclusive)
+     */
+    public static List<Integer> generateList(int start, int end) {
+        return IntStream.rangeClosed(start, end)
+                .boxed()
+                .collect(Collectors.toList());
+    }
+    
+    /**
      * Generate pair from two list
      */
     public static List<int []> generatePair(List<Integer> l1, List<Integer> l2) {
